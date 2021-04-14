@@ -41,6 +41,8 @@ mkdir -p $RESULTSDIR
 cd $REFDIR
 
 ###identify exons and splice sites
+
+##commented out the next step because I have a .gtf, so conversion is not necessary
 #gffread $REF.gff -T -o $REF.gtf
 extract_splice_sites.py $REF.gtf > $REF.ss
 extract_exons.py $REF.gtf > $REF.exon
