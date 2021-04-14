@@ -36,7 +36,9 @@ mkdir -p $RESULTSDIR
 
 ###index the genome
 cd $REFDIR
-gffread $REF2.gff.gz -T -o $REF2.gtf
+
+##this step is needed because I need to convert a .gff to a .gtf
+gffread $REF2.gff -T -o $REF2.gtf
 extract_splice_sites.py $REF2.gtf > $REF2.ss
 extract_exons.py $REF2.gtf > $REF2.exon
 hisat2-build -ss $REF2.ss --exon $REF2.exon $REF2.fna.gz $REF2_index
