@@ -65,7 +65,7 @@ while read i;
 do
 	hisat2 -p 6 --dta --phred33	\
 	-x "$REFDIR"/"$REF"_index	\
-	-1 "$DATADIR"/"Si"_1_paired.fastq  -2 "$DATADIR"/"$i"_2_paired.fastq	\
+	-1 "$DATADIR"/"$i"_1_paired.fastq  -2 "$DATADIR"/"$i"_2_paired.fastq	\
 	-S "$i".sam
 
 ###samtools
