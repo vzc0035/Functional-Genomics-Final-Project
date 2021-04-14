@@ -19,22 +19,22 @@ DATADIR=/scratch/aubclsa0105/FinalProject/RawData/RawData_assessed
 WORKDIR=/scratch/aubclsa0105/FinalProject/Trimmed
 
 ###make the new working directory
-#mkdir -p $WORKDIR
+mkdir -p $WORKDIR
 
 ###change to the data directory to make the list
-#cd $DATADIR
+cd $DATADIR
 
 ###make a list of all files to be trimmed
-#ls | grep ".fastq" |cut -d "_" -f 1 | sort | uniq > list
+ls | grep ".fastq" |cut -d "_" -f 1 | sort | uniq > list
 
 ###move this list to the working directory so trimmomatic can work with these files in the new directory
-#mv list $WORKDIR
+mv list $WORKDIR
 
 ###change to the working directory
 cd $WORKDIR
 
 ###copy the fasta file containing Illumina adapter sequences
-#cp /home/aubclsa0105/class_shared/AdaptersToTrim_All.fa .
+cp /home/aubclsa0105/class_shared/AdaptersToTrim_All.fa .
 
 ###create a while loop to trim multiple files using Trimmomatic
 while read i
