@@ -51,7 +51,7 @@ ls | grep ".fastq" |cut -d "_" -f 1|sort | uniq > list
 ###copy it to a new directory
 cd $OUTDIR
 
-cp $DATADIR/list
+cp $DATADIR/list .
 
 ###HiSAT2: mapping
 while read i;
